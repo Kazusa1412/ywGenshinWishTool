@@ -7,6 +7,3 @@ interface DataProducer {
     suspend fun fetchAllData(): List<WishResponse>
 }
 
-expect object YwFactory {
-    fun createDataProducer(): DataProducer
-}

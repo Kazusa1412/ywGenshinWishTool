@@ -36,6 +36,14 @@ kotlin {
         }
     }
 
+    mingwX64 {
+        binaries {
+            executable {
+                entryPoint = "com.elouyi.main"
+            }
+        }
+    }
+
     sourceSets {
 
         val commonMain by getting {
@@ -68,5 +76,10 @@ kotlin {
         val jsTest by getting {
 
         }
+
+        val mingwX64Main by getting {
+
+        }
+        val mingwX64Test by getting
     }
 }
