@@ -9,3 +9,5 @@ fun main() {
         child(App::class) {  }
     }
 }
+
+var url = ""
