@@ -1,5 +1,13 @@
 package com.elouyi
 
-fun main() {
+import com.elouyi.utils.readLocalFile
+import kotlinx.cinterop.*
+
+fun main() = memScoped<Unit> {
     println("native")
+
+    val url = readLocalFile()
+    println(url)
+
+    readLine()
 }
