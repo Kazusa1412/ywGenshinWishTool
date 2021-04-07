@@ -15,7 +15,3 @@ fun main() = memScoped<Unit> {
     println("您的链接是\n$url")
     readLine()
 }
-
-fun test() {
-
-}

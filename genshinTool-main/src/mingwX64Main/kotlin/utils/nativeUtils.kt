@@ -18,14 +18,15 @@ fun readLocalFile(): String = buildString{
     val fileName = "C:/Users/${getWindowsUserName()}/AppData/LocalLow/miHoYo/原神/output_log.txt"
     val fp = _wfopen(fileName.wcstr,"r".wcstr)
     if (fp == null) {
-        println("没有找到文件")
+        println("没有找到文件\n $fileName")
+        readLine()
         exit(1)
     }
     memScoped {
-        val a:  CValuesRef<ByteVar> = allocArray(1024)
+        val a:  CValuesRef<ByteVar> = allocArray(5000)
         val prefix = "OnGetWebViewPageFinish:https://"
         while (true) {
-            if (fgets(a,1024,fp) != null) {
+            if (fgets(a,5000,fp) != null) {
                 //printf("%s\n",a)
                 val a = a.getPointer(this).toKStringFromUtf8()
                 if (a.startsWith(prefix)){
