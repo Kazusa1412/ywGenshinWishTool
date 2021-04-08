@@ -1,7 +1,9 @@
 package com.elouyi
 
+import com.elouyi.data.buildWishUrl
 import com.elouyi.data.getUrlDataFromUrl
 import com.elouyi.utils.request
+import io.ktor.client.call.*
 import kotlinx.browser.document
 import kotlinx.browser.window
 import kotlinx.coroutines.MainScope
@@ -17,6 +19,7 @@ import react.RState
 import react.dom.button
 import react.dom.input
 import react.dom.p
+import react.dom.script
 
 @JsExport
 class App : RComponent<RProps,RState>() {
@@ -44,7 +47,25 @@ class App : RComponent<RProps,RState>() {
                         }else {
                             url = inputUrl
                             val u2 = getUrlDataFromUrl(url)
-                            console.log(u2)
+                            MainScope().launch {
+                                val u22 = buildWishUrl {
+                                    withUrlData(u2)
+                                    end_id = "0"
+                                }
+                                console.log("请求地址是 $u22")
+                                val r = request(u22)
+                                console.log("r is $r")
+                                /*
+                                com.elouyi.net.request(u22) {
+                                    val r = receive<String>()
+                                    console.log("r is $r")
+                                }*/
+
+                            }
+                            script {
+                                + "zzz"
+                                console.log("zzzxxcasd")
+                            }
                         }
                     }
                 }

@@ -43,6 +43,7 @@ open class UrlData(
     var game_biz: String = "",
 )
 
+
 inline fun buildWishUrl(
     block: WishUrlBuilder.() -> Unit
 ): String = WishUrlBuilder().run {
@@ -57,10 +58,27 @@ data class WishUrlBuilder(
     var end_id: String = "",
 ) : UrlData(), YwBuilder<String> {
 
+    fun withUrlData(urlData: UrlData) {
+        //todo 用数据类的解构
+        this.authkey_ver = urlData.authkey_ver
+        this.sign_type = urlData.sign_type
+        this.auth_appid = urlData.auth_appid
+        this.init_type = urlData.init_type
+        this.gacha_id = urlData.gacha_id
+        this.lang = urlData.lang
+        this.device_type = urlData.device_type
+        this.ext = urlData.ext
+        this.game_version = urlData.game_version
+        this.region = urlData.region
+        this.authkey = urlData.authkey
+        this.game_biz = urlData.game_biz
+    }
+
     override fun build(): String = buildString {
         append("https://hk4e-api.mihoyo.com/event/gacha_info/api/getGachaLog?")
         //val c = this@WishUrlBuilder::class // 反射是 jvm 平台的
-        append("sign_type=$sign_type")
+        append("authkey_ver=$authkey_ver")
+        append("&sign_type=$sign_type")
         append("&auth_appid=$auth_appid")
         append("&init_type=$init_type")
         append("&gacha_id=$gacha_id")
@@ -69,7 +87,7 @@ data class WishUrlBuilder(
         append("&ext=$ext")
         append("&game_version=$game_version")
         append("&region=$region")
-        append("&authKey=$authkey")
+        append("&authkey=$authkey")
         append("&game_biz=$game_biz")
         append("&gacha_type=$gacha_type")
         append("&page=$page")
@@ -87,7 +105,7 @@ fun getUrlDataFromUrl(url: String): UrlData {
             it.split("=").apply {
                 map[get(0)] = get(1).run {
                     if (endsWith("#/log")){
-                        slice(0 until length - 5)
+                        slice(0 until lastIndexOf("#"))
                     }else {
                         this
                     }

@@ -3,6 +3,7 @@ object Versions {
     // common
     const val kotlin = "1.4.32"
     const val coroutine = "1.4.3"
+    const val ktor = "1.5.3"
 
     // jvm
     const val jvmTarget = "11"
