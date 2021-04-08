@@ -1,5 +1,7 @@
 package com.elouyi
 
+import com.elouyi.net.getIpByHostname
+import com.elouyi.net.openSocket
 import com.elouyi.utils.readLocalFile
 import kotlinx.cinterop.*
 import platform.posix.exit
@@ -16,7 +18,7 @@ fun main() {
     }
 
     println("您的链接是\n$url")
-
+/*
     val worker = Worker.start(true,"zz")
 
     worker.execute(TransferMode.UNSAFE,{
@@ -28,11 +30,18 @@ fun main() {
     }.consume {
         println(4)
     }
+
+
+ */
+    openSocket("https://www.baidu.com")
+    /*
     while (true) {
         Worker.start(true).execute(TransferMode.UNSAFE,{}) {
             println("13 ${pthread_self()!!} sdsa")
         }
     }
+
+     */
 
 
     readLine()
