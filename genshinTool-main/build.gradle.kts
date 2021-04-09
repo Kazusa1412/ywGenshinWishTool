@@ -1,3 +1,5 @@
+import java.io.File
+
 group = "com.elouyi"
 version = "0.1"
 
@@ -42,6 +44,16 @@ kotlin {
                 entryPoint = "com.elouyi.main"
             }
         }
+
+        // mingw 路径
+        // https://github.com/JetBrains/kotlin/tree/master/kotlin-native/samples/libcurl
+        val mingwPath = File(System.getenv("MINGW64_DIR") ?: "C:/msys64/mingw64")
+        compilations["main"].cinterops {
+            val libcurl by creating {
+                includeDirs.headerFilterOnly(mingwPath.resolve("include"))
+            }
+            println("df is "+libcurl.defFile)
+        }
     }
 
     sourceSets {
@@ -83,7 +95,7 @@ kotlin {
         }
 
         val mingwX64Main by getting {
-
+            languageSettings.useExperimentalAnnotation("kotlin.ExperimentalStdlibApi")
         }
         val mingwX64Test by getting
     }
