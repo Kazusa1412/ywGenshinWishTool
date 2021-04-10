@@ -1,52 +1,39 @@
 package com.elouyi
 
-import com.elouyi.data.buildWishUrl
-import com.elouyi.data.getUrlDataFromUrl
-import com.elouyi.utils.request
-import io.ktor.client.call.*
 import kotlinx.browser.document
-import kotlinx.browser.window
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.launch
-import kotlinx.css.marginTop
-import kotlinx.css.px
+import kotlinx.html.InputType
 import kotlinx.html.id
-import kotlinx.html.js.onChangeFunction
 import kotlinx.html.js.onClickFunction
-import kotlinx.html.js.onInputFunction
-import react.RBuilder
-import react.RComponent
-import react.RProps
-import react.RState
+import org.w3c.files.File
+import org.w3c.files.FileReader
+import react.*
 import react.dom.button
 import react.dom.input
 import react.dom.p
-import react.dom.script
-import styled.css
 import styled.styledDiv
+import kotlin.reflect.typeOf
+
+external interface AppProps : RProps {
+    var jsonStr: String
+}
+
+external interface AppState: RState {
+    var test: String?
+}
 
 @JsExport
-class App : RComponent<RProps,RState>() {
+class App : RComponent<AppProps,AppState>() {
 
     override fun RBuilder.render() {
         p {
             + "zzz"
         }
-        styledDiv {
-            css {
-                marginTop = 10.px
-            }
+        if (state.test.isNullOrEmpty()) {
             input {
                 attrs {
-                    placeholder = ""
-                }
-            }
-        }
-        if (url.isEmpty()) {
-            input {
-                attrs {
-                    placeholder = "请输入 url (运行genshinTool-main.exe即可获得)"
+                    type = InputType.file
                     id = "urlInput"
+                    accept = "json"
                 }
             }
             button {
@@ -54,36 +41,29 @@ class App : RComponent<RProps,RState>() {
                 attrs {
                     onClickFunction = {
                         val input: dynamic = document.getElementById("urlInput")
-                        val inputUrl = input.value as String?
-                        console.log(inputUrl)
-                        if (inputUrl.isNullOrEmpty()) {
-                            window.alert("请输入url")
-                        }else {
-                            url = inputUrl
-                            val u2 = getUrlDataFromUrl(url)
-                            MainScope().launch {
-                                val u22 = buildWishUrl {
-                                    withUrlData(u2)
-                                    end_id = "0"
-                                }
-                                console.log("请求地址是 $u22")
-                                val r = request(u22)
-                                console.log("r is $r")
-                                /*
-                                com.elouyi.net.request(u22) {
-                                    val r = receive<String>()
-                                    console.log("r is $r")
-                                }*/
-
-                            }
-                            script {
-                                + "zzz"
-                                console.log("zzzxxcasd")
-                            }
+                        val inputFile = input.files[0] as File
+                        val reader = FileReader()
+                        reader.onload = {
+                            console.log(reader.result)
                         }
+                        reader.readAsText(inputFile)
+                        setState {
+                            test = "13456"
+                        }
+                        console.log(inputFile)
+                        console.log(inputFile::class)
+
                     }
                 }
             }
+        }else {
+            p {
+                + "hahaha"
+            }
+        }
+
+        styledDiv {
+
         }
     }
 }

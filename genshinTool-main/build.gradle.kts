@@ -1,4 +1,5 @@
 import java.io.File
+import org.jetbrains.compose.compose
 
 group = "com.elouyi"
 version = "0.1"
@@ -6,11 +7,15 @@ version = "0.1"
 plugins {
     kotlin("multiplatform") version Versions.kotlin
     kotlin("plugin.serialization") version Versions.kotlin
+    id("org.jetbrains.compose") version Versions.compose
+
 }
 
 repositories {
     jcenter() // 居然还要 jcenter
     maven { url = uri("https://dl.bintray.com/kotlin/kotlin-js-wrappers") }
+    maven { url = uri("https://maven.pkg.jetbrains.space/public/p/compose/dev") }
+    mavenCentral()
 }
 
 kotlin {
@@ -19,6 +24,7 @@ kotlin {
         compilations.all {
             kotlinOptions.jvmTarget = Versions.jvmTarget
         }
+
     }
 
     js(LEGACY) {
@@ -72,6 +78,7 @@ kotlin {
         val jvmMain by getting {
             dependencies {
                 implementation("io.ktor:ktor-client-cio:${Versions.ktor}")
+                implementation(compose.desktop.currentOs)
             }
         }
 
@@ -103,5 +110,11 @@ kotlin {
         all {
             languageSettings.enableLanguageFeature("InlineClasses")
         }
+    }
+}
+
+compose.desktop {
+    application {
+        mainClass = "com.elouyi.MainKt"
     }
 }
