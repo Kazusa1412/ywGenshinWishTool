@@ -66,10 +66,22 @@ inline fun buildWishUrl(
 }
 
 /**
+ * 祈愿请求类型
+ * @property character 角色祈愿
+ * @property weapon 武器
+ * @property standard 常驻
+ */
+object GachaType {
+    const val character = 301
+    const val weapon = 302
+    const val standard = 200
+}
+
+/**
  * get 请求 url builder
  */
 data class WishUrlBuilder(
-    var gacha_type: Int = 301,
+    var gacha_type: Int = GachaType.character,
     var page: Int = 1,
     var size: Int = 6,
     var end_id: String = "0",

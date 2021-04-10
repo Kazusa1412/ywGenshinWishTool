@@ -1,5 +1,6 @@
 package com.elouyi.net
 
+import com.elouyi.net.localazy.Http
 import kotlinx.cinterop.*
 import platform.posix.*
 import platform.windows.htons
@@ -62,3 +63,7 @@ fun request(url: String): String {
 fun Int.dword() = toUInt()
 
 fun Long.dword() = toUInt()
+
+actual fun simpleGet(url: String): String {
+    return Http.get(url, emptyMap()) ?: throw Exception("请求错误")
+}

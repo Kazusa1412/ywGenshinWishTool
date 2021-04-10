@@ -99,5 +99,9 @@ kotlin {
             languageSettings.useExperimentalAnnotation("kotlin.ExperimentalStdlibApi")
         }
         val mingwX64Test by getting
+
+        all {
+            languageSettings.enableLanguageFeature("InlineClasses")
+        }
     }
 }

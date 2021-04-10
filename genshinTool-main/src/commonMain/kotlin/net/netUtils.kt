@@ -18,3 +18,5 @@ suspend fun request(url: String,block: suspend HttpResponse.() -> Unit) {
     client.get<HttpResponse>(url).block()
     client.close()
 }
+
+expect fun simpleGet(url: String): String
