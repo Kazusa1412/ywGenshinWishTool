@@ -1,6 +1,7 @@
 package com.elouyi
 
 import com.elouyi.data.DataProducer
+import com.elouyi.data.IUrlDataFromMap
 import com.elouyi.data.WishResponse
 
 actual object YwFactory {
@@ -15,5 +16,9 @@ actual object YwFactory {
                 TODO("Not yet implemented")
             }
         }
+    }
+
+    actual fun urlDataFromMap(): IUrlDataFromMap {
+        TODO("Not yet implemented")
     }
 }

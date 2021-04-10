@@ -1,4 +1,8 @@
-package com.elouyi.net
+/*
+    这些代码改来自 https://github.com/localazy/kotlin-mpp-wininet
+ */
+
+package com.elouyi.net.localazy
 
 object Http {
 

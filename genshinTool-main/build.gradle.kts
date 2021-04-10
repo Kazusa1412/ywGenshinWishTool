@@ -47,12 +47,12 @@ kotlin {
 
         // mingw 路径
         // https://github.com/JetBrains/kotlin/tree/master/kotlin-native/samples/libcurl
+        // 照着 sample 打的，没啥用
         val mingwPath = File(System.getenv("MINGW64_DIR") ?: "C:/msys64/mingw64")
         compilations["main"].cinterops {
             val libcurl by creating {
                 includeDirs.headerFilterOnly(mingwPath.resolve("include"))
             }
-            println("df is "+libcurl.defFile)
         }
     }
 

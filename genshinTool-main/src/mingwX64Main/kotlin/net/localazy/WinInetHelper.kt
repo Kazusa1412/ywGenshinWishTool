@@ -1,7 +1,7 @@
-package com.elouyi.net
+package com.elouyi.net.localazy
 
+import com.elouyi.net.dword
 import kotlinx.cinterop.*
-import platform.posix.BUFSIZ
 import platform.windows.*
 import kotlin.native.internal.NativePtr
 

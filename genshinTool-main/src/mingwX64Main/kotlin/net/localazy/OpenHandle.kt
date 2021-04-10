@@ -1,4 +1,4 @@
-package com.elouyi.net
+package com.elouyi.net.localazy
 
 import platform.windows.HINTERNET
 

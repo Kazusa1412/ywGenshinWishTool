@@ -8,6 +8,8 @@ import kotlinx.browser.document
 import kotlinx.browser.window
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
+import kotlinx.css.marginTop
+import kotlinx.css.px
 import kotlinx.html.id
 import kotlinx.html.js.onChangeFunction
 import kotlinx.html.js.onClickFunction
@@ -20,6 +22,8 @@ import react.dom.button
 import react.dom.input
 import react.dom.p
 import react.dom.script
+import styled.css
+import styled.styledDiv
 
 @JsExport
 class App : RComponent<RProps,RState>() {
@@ -27,6 +31,16 @@ class App : RComponent<RProps,RState>() {
     override fun RBuilder.render() {
         p {
             + "zzz"
+        }
+        styledDiv {
+            css {
+                marginTop = 10.px
+            }
+            input {
+                attrs {
+                    placeholder = ""
+                }
+            }
         }
         if (url.isEmpty()) {
             input {

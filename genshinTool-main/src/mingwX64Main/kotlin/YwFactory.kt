@@ -1,6 +1,8 @@
 package com.elouyi
 
+import com.elouyi.data.CommonUrlDataFromMap
 import com.elouyi.data.DataProducer
+import com.elouyi.data.IUrlDataFromMap
 import com.elouyi.data.WishResponse
 
 actual object YwFactory {
@@ -12,5 +14,9 @@ actual object YwFactory {
         override suspend fun fetchAllData(url: String): List<WishResponse> {
             throw Exception("native 还没协程")
         }
+    }
+
+    actual fun urlDataFromMap(): IUrlDataFromMap {
+        return CommonUrlDataFromMap
     }
 }

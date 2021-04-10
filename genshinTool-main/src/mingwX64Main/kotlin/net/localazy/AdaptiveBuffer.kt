@@ -1,4 +1,4 @@
-package com.elouyi.net
+package com.elouyi.net.localazy
 
 /**
  * AdaptiveBuffer is inspired by JetBrains' implementation of

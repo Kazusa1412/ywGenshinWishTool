@@ -1,6 +1,8 @@
 package com.elouyi
 
 import com.elouyi.data.DataProducer
+import com.elouyi.data.IUrlDataFromMap
+import com.elouyi.data.CommonUrlDataFromMap
 import com.elouyi.data.WishResponse
 import kotlinx.browser.window
 import kotlinx.coroutines.await
@@ -14,6 +16,10 @@ actual object YwFactory {
         override suspend fun fetchAllData(url: String): List<WishResponse> {
             TODO("Not yet implemented")
         }
+    }
+
+    actual fun urlDataFromMap(): IUrlDataFromMap {
+        return CommonUrlDataFromMap
     }
 
 }

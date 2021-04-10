@@ -1,5 +1,6 @@
 package com.elouyi.data
 
+import com.elouyi.YwFactory
 import kotlin.reflect.KProperty
 
 data class SingleData(
@@ -113,10 +114,29 @@ fun getUrlDataFromUrl(url: String): UrlData {
             }
         }
     println(map)
-    return getUrlDataFromMap(map)
+    return YwFactory.urlDataFromMap().getUrlDataFromMap(map)
 }
 
-expect fun getUrlDataFromMap(map: Map<String,Any>): UrlData
+interface IUrlDataFromMap {
+    fun getUrlDataFromMap(map: Map<String, Any>): UrlData
+}
+
+object CommonUrlDataFromMap : IUrlDataFromMap {
+    override fun getUrlDataFromMap(map: Map<String, Any>): UrlData = UrlData().apply {
+        authkey_ver = map.getProp(::authkey_ver)
+        sign_type = map.getProp(::sign_type)
+        auth_appid = map.getProp(::auth_appid)
+        init_type = map.getProp(::init_type)
+        gacha_id = map.getProp(::gacha_id)
+        lang = map.getProp(::lang)
+        device_type = map.getProp(::device_type)
+        ext = map.getProp(::ext)
+        game_version = map.getProp(::game_version)
+        region = map.getProp(::region)
+        authkey = map.getProp(::authkey)
+        game_biz = map.getProp(::game_biz)
+    }
+}
 
 
 fun <R> Map<String,Any>.getProp(kProperty: KProperty<Any>): R{

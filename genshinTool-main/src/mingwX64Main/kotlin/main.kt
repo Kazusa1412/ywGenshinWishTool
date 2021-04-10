@@ -1,6 +1,6 @@
 package com.elouyi
 
-import com.elouyi.net.Http
+import com.elouyi.net.localazy.Http
 import com.elouyi.utils.readLocalFile
 import platform.posix.exit
 
