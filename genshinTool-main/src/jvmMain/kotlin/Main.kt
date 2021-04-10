@@ -1,7 +1,6 @@
 package com.elouyi
 
 import androidx.compose.desktop.Window
-import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
@@ -9,69 +8,60 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.elouyi.data.WishJsonFile
+import com.elouyi.data.getWishData
 import com.elouyi.data.statement
 import com.elouyi.ui.YwShape
 import com.elouyi.ui.loading
+import com.elouyi.ui.none
+import com.elouyi.ui.showInfo
+import com.elouyi.utils.DataState
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
-fun main() = Window(title = "ywTitle",size = IntSize(1280,720),icon = null) {
+fun main() = Window(title = "ywGenshinTool V0.1",size = IntSize(1280,720),icon = null) {
 
-    val data = remember { mutableStateOf(0) }
+    val data = remember { mutableStateOf(WishJsonFile()) }
+    val state = remember { mutableStateOf(DataState.LOADING) }
 
+    GlobalScope.launch(Dispatchers.Main) {
+        val jsonData = getWishData()
+        if (jsonData == null) {
+            state.value = DataState.NONE
+            return@launch
+        }
+        data.value = jsonData
+        state.value = DataState.DONE
+    }
 
-    MaterialTheme {
-        Column {
-            Row (modifier = Modifier.height(100.dp).fillMaxWidth().background(Color.Yellow)){
+    MaterialTheme(shapes = YwShape.test) {
+        Column(modifier = Modifier.fillMaxSize().background(Color(255,234,239,255))) {
+            Column(modifier = Modifier.weight(100f)) {
+                Row (modifier = Modifier.height(100.dp).fillMaxWidth().background(Color(250,140,160,150))) {
+                    Button(
+                        modifier = Modifier.padding(10.dp),
+                        onClick = {
 
-            }
-            loading()
-            Row(modifier = Modifier.padding(10.dp).height(300.dp).fillMaxWidth().background(Color.Green)) {
-                Canvas(modifier = Modifier.padding(40.dp).height(200.dp).width(200.dp).background(Color.Yellow)) {
-                    drawArc(
-                        color = Color.Green,
-                        0f,
-                        90f,
-                        true
-                    )
-                    drawArc(
-                        color = Color.Red,
-                        90f,
-                        180f,
-                        true
-                    )
-                    drawArc(
-                        color = Color.Blue,
-                        270f,
-                        90f,
-                        true
-                    )
+                        }
+                    ) {
+                        Text("更新数据")
+                    }
                 }
-                Canvas(modifier = Modifier.padding(40.dp).height(200.dp).width(200.dp).background(Color.Yellow)) {
-                    drawArc(
-                        color = Color.Green,
-                        0f,
-                        60f,
-                        true
-                    )
-                }
-                Canvas(modifier = Modifier.padding(40.dp).height(200.dp).width(200.dp).background(Color.Yellow)) {
-                    drawArc(
-                        color = Color.Green,
-                        0f,
-                        120f,
-                        true
-                    )
+
+                when(state.value) {
+                    DataState.LOADING -> loading()
+                    DataState.DONE -> showInfo(data.value)
+                    DataState.NONE -> none()
                 }
             }
 
-
-            Text(statement,modifier = Modifier)
+            Text(statement,modifier = Modifier.weight(5f),fontSize = 15.sp)
         }
     }
     /*

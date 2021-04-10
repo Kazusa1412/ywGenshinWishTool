@@ -15,3 +15,9 @@ inline fun <reified T> serialize(obj: T): String {
 }
 
 expect fun save2File(filePath: String,content: String)
+
+enum class DataState {
+    LOADING,
+    DONE,
+    NONE,
+}

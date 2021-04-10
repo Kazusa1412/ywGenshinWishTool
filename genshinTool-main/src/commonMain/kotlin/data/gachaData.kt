@@ -57,7 +57,23 @@ open class UrlData(
 
 @Serializable
 data class WishJsonFile(
-    val data: List<List<WishResponse>>
+    var data: List<List<WishResponse>> = mutableListOf()
+)
+
+/**
+ * @see getWishShowData
+ */
+data class WishShowData(
+    var total: Int = 0,
+    var ch_5: Int = 0,
+    var weapon_5: Int = 0,
+    var ch_4: Int = 0,
+    var weapon_4: Int = 0,
+    var weapon_3: Int = 0,
+    var s_5: MutableMap<String,Int> = mutableMapOf(),
+    var count5: Int = 0,
+    var startTime: String = "",
+    var endTime: String = "",
 )
 
 /**

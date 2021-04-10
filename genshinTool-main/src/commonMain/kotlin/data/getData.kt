@@ -48,3 +48,29 @@ fun getSingleWishData(data: UrlData,type: Int): List<WishResponse> {
     }
     return resList
 }
+
+fun getWishShowData(res: List<WishResponse>): WishShowData {
+    return WishShowData().apply {
+        endTime = res.first().data.list.first().time.run { slice(0 until indexOf(" ")) }
+        startTime = res.last().data.list.last().time.run { slice(0 until indexOf(" ")) }
+        res.reversed().forEach { wishRes ->
+            wishRes.data.list.reversed().forEach {
+                total++
+                count5++
+                when(it.rank_type) {
+                    "5" -> {
+                        if (it.item_type == "角色") ch_5++ else weapon_5++
+                        s_5[it.name] = count5
+                        count5 = 0
+                    }
+                    "4" -> {
+                        if (it.item_type == "角色") ch_4++ else weapon_4++
+                    }
+                    "3" -> {
+                        weapon_3++
+                    }
+                }
+            }
+        }
+    }
+}

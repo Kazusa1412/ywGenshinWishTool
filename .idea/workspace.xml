@@ -5,20 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44bbb840-826c-4876-b0be-125e64309c0c" name="Default Changelist" comment="compose ui">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/genshinTool_main_js_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/genshinTool_main_jvm_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/genshinTool-main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ywGenshinWishTool.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildSrc/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genshinTool-main/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/ui/showInfo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genshinTool-main/src/commonMain/kotlin/data/gachaData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/commonMain/kotlin/data/gachaData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genshinTool-main/src/commonMain/kotlin/data/getData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/commonMain/kotlin/data/getData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genshinTool-main/src/commonMain/kotlin/data/ywConst.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/commonMain/kotlin/data/ywConst.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genshinTool-main/src/commonMain/kotlin/utils/ywUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/commonMain/kotlin/utils/ywUtils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/data/jvmGetData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/data/jvmGetData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/ui/ywUI.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,9 +90,10 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.foundation/foundation-layout-desktop/0.3.0/61acdcd17a01973c9631049f1181b7cb07304305/foundation-layout-desktop-0.3.0.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15580449" />
@@ -105,6 +103,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="P:\dev\ws\ywGenshinWishTool" />
       <recent name="P:\dev\ws\ywGenshinWishTool\genshinTool-main\src\nativeInterop\cinterop" />
       <recent name="P:\dev\ws\ywGenshinWishTool\genshinTool-main\src\mingwX64Main\cinterop" />
     </key>
@@ -151,15 +150,13 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -365,7 +362,8 @@
       <workItem from="1617947239527" duration="3005000" />
       <workItem from="1617961483034" duration="7378000" />
       <workItem from="1618020552592" duration="26234000" />
-      <workItem from="1618048567089" duration="6567000" />
+      <workItem from="1618048567089" duration="9966000" />
+      <workItem from="1618058998807" duration="8757000" />
     </task>
     <task id="LOCAL-00001" summary="init with gradle">
       <created>1617697772927</created>
@@ -472,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618045456929</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="compose ui">
+      <created>1618055710474</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1618055710474</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
