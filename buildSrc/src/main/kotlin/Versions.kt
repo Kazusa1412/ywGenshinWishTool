@@ -4,6 +4,7 @@ object Versions {
     const val kotlin = "1.4.32"
     const val coroutine = "1.4.3"
     const val ktor = "1.5.3"
+    const val kotlinxSerialization = "1.1.0"
 
     // jvm
     const val jvmTarget = "11"

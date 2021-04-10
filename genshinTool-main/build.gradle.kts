@@ -5,6 +5,7 @@ version = "0.1"
 
 plugins {
     kotlin("multiplatform") version Versions.kotlin
+    kotlin("plugin.serialization") version Versions.kotlin
 }
 
 repositories {
@@ -64,7 +65,7 @@ kotlin {
                 implementation(kotlin("stdlib-common"))
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutine}")
                 implementation("io.ktor:ktor-client-core:${Versions.ktor}")
-
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.kotlinxSerialization}")
             }
         }
 

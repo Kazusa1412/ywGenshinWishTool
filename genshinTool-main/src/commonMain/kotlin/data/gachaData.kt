@@ -1,34 +1,45 @@
 package com.elouyi.data
 
 import com.elouyi.YwFactory
+import kotlinx.serialization.Serializable
 import kotlin.reflect.KProperty
 
+@Serializable
 data class SingleData(
     val uid: String,
-    val gachaType: String,
-    val itemId: String,
+    val gacha_type: String,
+    val item_id: String,
     val count: String,
     val time: String,
     val name: String,
     val lang: String,
-    val itemType: String,
-    val rankType: String,
+    val item_type: String,
+    val rank_type: String,
     val id: String,
 )
 
+@Serializable
 data class WishData(
     val page: String,
     val size: String,
     val total: String,
-    val list: List<SingleData>
+    val list: List<SingleData>,
+    val region: String,
 )
 
+/**
+ * get 请求响应实体类
+ */
+@Serializable
 data class WishResponse(
     val retcode: Int,
     val message: String,
-    val data: WishData
+    val data: WishData,
 )
 
+/**
+ * 读取的 url 数据类
+ */
 open class UrlData(
     var authkey_ver: Int = 1,
     var sign_type: Int = 2,
@@ -44,7 +55,9 @@ open class UrlData(
     var game_biz: String = "",
 )
 
-
+/**
+ * 生成 get 请求 url 的方法
+ */
 inline fun buildWishUrl(
     block: WishUrlBuilder.() -> Unit
 ): String = WishUrlBuilder().run {
@@ -52,11 +65,14 @@ inline fun buildWishUrl(
     build()
 }
 
+/**
+ * get 请求 url builder
+ */
 data class WishUrlBuilder(
     var gacha_type: Int = 301,
     var page: Int = 1,
     var size: Int = 6,
-    var end_id: String = "",
+    var end_id: String = "0",
 ) : UrlData(), YwBuilder<String> {
 
     fun withUrlData(urlData: UrlData) {
@@ -97,30 +113,48 @@ data class WishUrlBuilder(
     }
 }
 
+/**
+ * 从读取到的 str 提取请求参数信息
+ */
 fun getUrlDataFromUrl(url: String): UrlData {
     val i = url.indexOf("?")
     val map = mutableMapOf<String,Any>()
     url.slice(i + 1 until url.length)
+        .run {
+            // endsWith 在 native 不是预期效果
+            if (contains("#")) {
+                slice(0 until lastIndexOf("#"))
+            } else this
+        }
         .split("&")
         .forEach {
             it.split("=").apply {
-                map[get(0)] = get(1).run {
-                    if (endsWith("#/log")){
-                        slice(0 until lastIndexOf("#"))
-                    }else {
-                        this
-                    }
-                }
+                map[get(0)] = get(1)
             }
         }
     println(map)
     return YwFactory.urlDataFromMap().getUrlDataFromMap(map)
 }
 
+/**
+ * 从 map 到 [UrlData] 的接口，由 [YwFactory] 构建
+ */
 interface IUrlDataFromMap {
     fun getUrlDataFromMap(map: Map<String, Any>): UrlData
 }
 
+/**
+ * emm
+ */
+val commonMap2UrlData: IUrlDataFromMap = object : IUrlDataFromMap {
+    override fun getUrlDataFromMap(map: Map<String, Any>): UrlData {
+        return CommonUrlDataFromMap.getUrlDataFromMap(map)
+    }
+}
+
+/**
+ * 公共部分的 map 转 [UrlData], jvm 平台可能会有其他实现
+ */
 object CommonUrlDataFromMap : IUrlDataFromMap {
     override fun getUrlDataFromMap(map: Map<String, Any>): UrlData = UrlData().apply {
         authkey_ver = map.getProp(::authkey_ver)
