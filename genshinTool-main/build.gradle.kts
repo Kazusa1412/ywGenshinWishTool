@@ -91,7 +91,6 @@ kotlin {
                 implementation("org.jetbrains:kotlin-react:${Versions.kotlinReact}")
                 implementation("org.jetbrains:kotlin-react-dom:${Versions.kotlinReact}")
                 implementation("org.jetbrains:kotlin-styled:${Versions.kotlinStyled}")
-                //implementation("io.ktor:ktor-client-cio:${Versions.ktor}")
                 implementation(npm("react",Versions.react))
                 implementation(npm("react-dom",Versions.react))
                 implementation(npm("styled-components", Versions.styledComponents))
