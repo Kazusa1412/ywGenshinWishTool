@@ -20,4 +20,5 @@ enum class DataState {
     LOADING,
     DONE,
     NONE,
+    ERROR,
 }

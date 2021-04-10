@@ -16,10 +16,7 @@ import androidx.compose.ui.unit.sp
 import com.elouyi.data.WishJsonFile
 import com.elouyi.data.getWishData
 import com.elouyi.data.statement
-import com.elouyi.ui.YwShape
-import com.elouyi.ui.loading
-import com.elouyi.ui.none
-import com.elouyi.ui.showInfo
+import com.elouyi.ui.*
 import com.elouyi.utils.DataState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -58,6 +55,7 @@ fun main() = Window(title = "ywGenshinTool V0.1",size = IntSize(1280,720),icon =
                     DataState.LOADING -> loading()
                     DataState.DONE -> showInfo(data.value)
                     DataState.NONE -> none()
+                    DataState.ERROR -> showError()
                 }
             }
 
