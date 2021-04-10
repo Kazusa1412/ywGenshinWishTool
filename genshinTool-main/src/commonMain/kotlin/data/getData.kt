@@ -2,6 +2,8 @@ package com.elouyi.data
 
 import com.elouyi.net.simpleGet
 import com.elouyi.utils.deserialize
+import com.elouyi.utils.save2File
+import com.elouyi.utils.serialize
 
 /**
  * 由 [com.elouyi.YwFactory] 构建
@@ -18,6 +20,10 @@ fun getWishData(data: UrlData) {
     val chList = getSingleWishData(data,GachaType.character)
     val weaponList = getSingleWishData(data,GachaType.weapon)
     val stdList = getSingleWishData(data,GachaType.standard)
+    val jsonFile = WishJsonFile(listOf(chList,weaponList,stdList))
+    val jsonStr = serialize(jsonFile)
+    val uid = chList[0].data.list[0].uid
+    save2File("data/${uid}_wish_data.json",jsonStr)
 }
 
 fun getSingleWishData(data: UrlData,type: Int): List<WishResponse> {
@@ -36,7 +42,6 @@ fun getSingleWishData(data: UrlData,type: Int): List<WishResponse> {
         if (res.data.list.isEmpty()) {
             break
         }
-        println(res)
         resList.add(res)
         mPage ++
         endId = res.data.list.last().id

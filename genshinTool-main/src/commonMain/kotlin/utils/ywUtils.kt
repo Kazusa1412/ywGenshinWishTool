@@ -10,6 +10,8 @@ inline fun <reified T> deserialize(jsonStr: String): T {
     }
 }
 
-fun serialize(obj: Any): String {
+inline fun <reified T> serialize(obj: T): String {
     return Json.encodeToString(obj)
 }
+
+expect fun save2File(filePath: String,content: String)

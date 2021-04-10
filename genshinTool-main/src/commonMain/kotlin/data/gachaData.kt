@@ -55,6 +55,11 @@ open class UrlData(
     var game_biz: String = "",
 )
 
+@Serializable
+data class WishJsonFile(
+    val data: List<List<WishResponse>>
+)
+
 /**
  * 生成 get 请求 url 的方法
  */

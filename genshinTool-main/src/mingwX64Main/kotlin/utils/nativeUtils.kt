@@ -2,6 +2,7 @@ package com.elouyi.utils
 
 import kotlinx.cinterop.*
 import platform.posix.*
+import platform.windows.CreateDirectoryW
 import platform.windows.DWORD
 import platform.windows.GetUserNameW
 
@@ -39,4 +40,10 @@ fun readLocalFile(): String = buildString{
         }
     }
     fclose(fp)
+}
+
+actual fun save2File(filePath: String,content: String) {
+    val fp = _wfopen(filePath.wcstr,"r+".wcstr) ?: _wfopen(filePath.wcstr,"w+".wcstr)
+    println(fp == null)
+    fputs(content,fp)
 }
