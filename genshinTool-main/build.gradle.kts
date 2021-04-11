@@ -11,14 +11,17 @@ plugins {
     kotlin("multiplatform") version Versions.kotlin
     kotlin("plugin.serialization") version Versions.kotlin
     id("org.jetbrains.compose") version Versions.compose
-
+    `maven-publish`
 }
+
 
 repositories {
     jcenter() // 居然还要 jcenter
-    maven { url = uri("https://dl.bintray.com/kotlin/kotlin-js-wrappers") }
-    maven { url = uri("https://maven.pkg.jetbrains.space/public/p/compose/dev") }
+    //maven { url = uri("https://dl.bintray.com/kotlin/kotlin-js-wrappers") }
+    //maven { url = uri("https://maven.pkg.jetbrains.space/public/p/compose/dev") }
     mavenCentral()
+    maven(url = uri("https://dl.bintray.com/kotlin/kotlin-js-wrappers"))
+    maven(url = uri("https://maven.pkg.jetbrains.space/public/p/compose/dev"))
 }
 
 kotlin {
@@ -130,10 +133,12 @@ compose.desktop {
                 msiPackageVersion = "0.0.1"
                 // a version only for the exe package
                 exePackageVersion = "0.0.1"
-                vendor = "example vender"
+                vendor = "YWNKM"
                 iconFile.set(project.file("icon.ico"))
             }
 
         }
     }
 }
+
+

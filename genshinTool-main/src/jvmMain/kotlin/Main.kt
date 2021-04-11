@@ -24,99 +24,109 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.io.File
+import java.lang.module.ModuleFinder.compose
 import javax.imageio.ImageIO
 
-fun main() = Window(
-    title = "ywGenshinTool V0.1",
-    size = IntSize(1280,720),
-    icon = ImageIO.read(YwFactory::class.java.classLoader.getResource("ct14.jpg"))
-) {
-    init()
-    val data = remember { mutableStateOf(WishJsonFile()) }
-    val state = remember { mutableStateOf(DataState.LOADING) }
+fun main() {
+    try {
+        Window(
+            title = "ywGenshinTool V0.1",
+            size = IntSize(1280,720),
+            icon = ImageIO.read(YwFactory::class.java.classLoader.getResource("ct14.jpg"))
+        ) {
+            init()
+            val data = remember { mutableStateOf(WishJsonFile()) }
+            val state = remember { mutableStateOf(DataState.LOADING) }
 
-    GlobalScope.launch(Dispatchers.Main) {
-        state.value = DataState.DOWNLOADING
-        //return@launch
-        val jsonData = getWishDataFromJsonFile()
-        if (jsonData == null) {
-            state.value = DataState.NONE
-            return@launch
-        }
-        data.value = jsonData
-        state.value = DataState.DONE
-    }
+            GlobalScope.launch(Dispatchers.Main) {
+                //state.value = DataState.DOWNLOADING
+                //return@launch
+                val jsonData = getWishDataFromJsonFile()
+                if (jsonData == null) {
+                    state.value = DataState.NONE
+                    return@launch
+                }
+                data.value = jsonData
+                state.value = DataState.DONE
+            }
 
-    MaterialTheme(shapes = YwShape.test) {
-        Column(modifier = Modifier.fillMaxSize().background(Color(255,234,239,255))) {
-            Column(modifier = Modifier.weight(100f)) {
-                Row (modifier = Modifier.height(100.dp).fillMaxWidth().background(Color(250,140,160,150))) {
-                    Button(
-                        modifier = Modifier.padding(20.dp),
-                        onClick = {
-                            if (state.value == DataState.LOADING || state.value == DataState.DOWNLOADING) return@Button
-                            GlobalScope.launch(Dispatchers.Main) {
-                                state.value = DataState.DOWNLOADING
-                                requestData()
-                                val jsonData = getWishDataFromJsonFile()
-                                if (jsonData == null) {
-                                    state.value = DataState.NONE
-                                    return@launch
+            MaterialTheme(shapes = YwShape.test) {
+                Column(modifier = Modifier.fillMaxSize().background(YwColor.background)) {
+                    Column(modifier = Modifier.weight(100f)) {
+                        Row (modifier = Modifier.height(80.dp).fillMaxWidth().background(Color(250,140,160,150))) {
+                            Button(
+                                modifier = Modifier.padding(20.dp),
+                                onClick = {
+                                    if (state.value == DataState.LOADING || state.value == DataState.DOWNLOADING) return@Button
+                                    GlobalScope.launch(Dispatchers.Main) {
+                                        state.value = DataState.DOWNLOADING
+                                        requestData()
+                                        val jsonData = getWishDataFromJsonFile()
+                                        if (jsonData == null) {
+                                            state.value = DataState.ERROR
+                                            return@launch
+                                        }
+                                        data.value = jsonData
+                                        state.value = DataState.DONE
+                                    }
+
                                 }
-                                data.value = jsonData
-                                state.value = DataState.DONE
+                            ) {
+                                Text("更新数据")
                             }
+                        }
 
+                        Crossfade(targetState = state) {
+                            when(it.value) {
+                                DataState.LOADING -> loading()
+                                DataState.DONE -> showInfo(data.value)
+                                DataState.NONE -> none()
+                                DataState.ERROR -> showError()
+                                DataState.DOWNLOADING -> showDownloading()
+                            }
+                        }
+                    }
+
+                    Text(statement,modifier = Modifier.weight(5f),fontSize = 15.sp)
+                }
+            }
+            /*
+            val count = remember { mutableStateOf(0) }
+            MaterialTheme(shapes = YwShape.test) {
+                Column(Modifier.fillMaxSize(),Arrangement.spacedBy(5.dp)) {
+                    Button(modifier = Modifier.align(Alignment.CenterHorizontally),
+                        onClick = {
+                            count.value++
                         }
                     ) {
-                        Text("更新数据")
+                        Text(if (count.value == 0) "Hello World" else "Clicked ${count.value}")
+                    }
+                    Button(modifier = Modifier.align(Alignment.CenterHorizontally),
+                        onClick = {
+                            count.value = 0
+                        }) {
+                        Text("Reset")
                     }
                 }
-
-                Crossfade(targetState = state) {
-                    when(it.value) {
-                        DataState.LOADING -> loading()
-                        DataState.DONE -> showInfo(data.value)
-                        DataState.NONE -> none()
-                        DataState.ERROR -> showError()
-                        DataState.DOWNLOADING -> showDownloading()
-                    }
+                Canvas(modifier = Modifier.fillMaxSize()){
+                    val canvasWidth = size.width
+                    val canvasHeight = size.height
+                    drawCircle(
+                        color = Color.Blue,
+                        center = Offset(x = canvasWidth / 2, y = canvasHeight / 2),
+                        radius = size.minDimension / 4
+                    )
                 }
             }
 
-            Text(statement,modifier = Modifier.weight(5f),fontSize = 15.sp)
+             */
         }
+    }catch (e: Exception) {
+        val file = File("error.log").apply { if (!exists()) createNewFile() }
+        val out = file.outputStream()
+        out.write(e.stackTraceToString().toByteArray())
+        out.close()
     }
-    /*
-    val count = remember { mutableStateOf(0) }
-    MaterialTheme(shapes = YwShape.test) {
-        Column(Modifier.fillMaxSize(),Arrangement.spacedBy(5.dp)) {
-            Button(modifier = Modifier.align(Alignment.CenterHorizontally),
-                onClick = {
-                    count.value++
-                }
-            ) {
-                Text(if (count.value == 0) "Hello World" else "Clicked ${count.value}")
-            }
-            Button(modifier = Modifier.align(Alignment.CenterHorizontally),
-                onClick = {
-                    count.value = 0
-                }) {
-                Text("Reset")
-            }
-        }
-        Canvas(modifier = Modifier.fillMaxSize()){
-            val canvasWidth = size.width
-            val canvasHeight = size.height
-            drawCircle(
-                color = Color.Blue,
-                center = Offset(x = canvasWidth / 2, y = canvasHeight / 2),
-                radius = size.minDimension / 4
-            )
-        }
-    }
-
-     */
 }
 
 fun init() {

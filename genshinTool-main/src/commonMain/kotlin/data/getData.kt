@@ -38,6 +38,7 @@ fun getSingleWishData(data: UrlData,type: Int): List<WishResponse> {
             gacha_type = type
         }
         val resStr = simpleGet(wishUrl)
+        println("resstr is" + resStr)
         val res = deserialize<WishResponse>(resStr)
         if (res.data.list.isEmpty()) {
             break
@@ -59,11 +60,11 @@ fun getWishShowData(res: List<WishResponse>): WishShowData {
                 count5++
                 when(it.rank_type) {
                     "5" -> {
-                        if (it.item_type == "角色") ch_5++ else weapon_5++
+                        if (it.item_type == "角色" || it.item_type == "Character") ch_5++ else weapon_5++
                         s_5[it.name] = count5
                         count5 = 0
                     }
-                    "4" -> if (it.item_type == "角色") ch_4++ else weapon_4++
+                    "4" -> if (it.item_type == "角色" || it.item_type == "Character") ch_4++ else weapon_4++
                     "3" -> weapon_3++
                 }
             }

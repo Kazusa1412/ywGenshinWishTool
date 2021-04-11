@@ -39,6 +39,17 @@ suspend fun readLocalFile(): String = withContext(Dispatchers.IO) {
 }
 
 suspend fun requestData() {
-    val data = getUrlDataFromUrl(readLocalFile())
-    getWishData(data)
+    withContext(Dispatchers.IO) {
+        try {
+            val data = getUrlDataFromUrl(readLocalFile())
+            getWishData(data)
+        }catch (e: Exception) {
+            e.printStackTrace()
+            val file = File("error.log").apply { if (!exists()) createNewFile() }
+            val out = file.outputStream()
+            out.write(e.stackTraceToString().toByteArray())
+            out.close()
+        }
+    }
+
 }
