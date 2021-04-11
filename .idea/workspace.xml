@@ -4,12 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44bbb840-826c-4876-b0be-125e64309c0c" name="Default Changelist" comment="jvm show data">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="44bbb840-826c-4876-b0be-125e64309c0c" name="Default Changelist" comment="windows distribution">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/genshinTool_main_js_0_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/genshinTool_main_js_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/genshinTool_main_jvm_0_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/genshinTool_main_jvm_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/genshinTool-main/ywGenshinWishTool.genshinTool-main.commonMain.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/genshinTool-main/ywGenshinWishTool.genshinTool-main.commonTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/genshinTool-main/ywGenshinWishTool.genshinTool-main.jsMain.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/genshinTool-main/ywGenshinWishTool.genshinTool-main.jsTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/genshinTool-main/ywGenshinWishTool.genshinTool-main.jvmTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/genshinTool-main/ywGenshinWishTool.genshinTool-main.mingwX64Test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/src/main/kotlin/Versions.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/genshinTool-main/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genshinTool-main/src/commonMain/kotlin/data/gachaData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/commonMain/kotlin/data/gachaData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genshinTool-main/src/commonMain/kotlin/data/getData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/commonMain/kotlin/data/getData.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/genshinTool-main/src/commonMain/kotlin/utils/ywUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/commonMain/kotlin/utils/ywUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genshinTool-main/src/jsMain/kotlin/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/jsMain/kotlin/App.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/YwFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/YwFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/data/jvmGetData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/data/jvmGetData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/net/jvmNetUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/net/jvmNetUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/ui/error.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/ui/error.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/ui/loding.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/ui/loding.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/ui/none.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/ui/none.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/ui/showInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/ui/showInfo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/utils/ywJvmUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/genshinTool-main/src/jvmMain/kotlin/utils/ywJvmUtils.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,23 +71,11 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="ywGenshinWishTool" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="compose desktop" type="c8890929:TasksNode$1" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="ywGenshinWishTool" type="f1a62948:ProjectNode" />
-                <item name="genshinTool-main" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="ywGenshinWishTool" type="f1a62948:ProjectNode" />
-                <item name="genshinTool-main" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="ywGenshinWishTool" type="f1a62948:ProjectNode" />
-                <item name="genshinTool-main" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="compose desktop" type="c8890929:TasksNode$1" />
               </path>
@@ -111,28 +124,32 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/buildSrc/src/main/java" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15580449" />
     <property name="project.structure.side.proportion" value="0.24647123" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
     <property name="ts.external.directory.path" value="P:\dev\Jetbrains\IntelliJ IDEA 2020.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="P:\dev\ws\ywGenshinWishTool\buildSrc\src\main\java" />
+      <recent name="P:\dev\ws\ywGenshinWishTool\genshinTool-main" />
+      <recent name="P:\dev\ws\ywGenshinWishTool\genshinTool-main\src\jvmMain\resources" />
       <recent name="P:\dev\ws\ywGenshinWishTool" />
       <recent name="P:\dev\ws\ywGenshinWishTool\genshinTool-main\src\nativeInterop\cinterop" />
-      <recent name="P:\dev\ws\ywGenshinWishTool\genshinTool-main\src\mingwX64Main\cinterop" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="P:\dev\ws\ywGenshinWishTool\buildSrc\src\main\kotlin" />
       <recent name="P:\dev\ws\ywGenshinWishTool\genshinTool-main\src\mingwX64Main" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="net.localazy" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ywGenshinWishTool:genshinTool-main [package]">
+  <component name="RunManager" selected="Application.MainKt">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -168,29 +185,31 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ywGenshinWishTool [createRuntimeImage]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ywGenshinWishTool [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--info" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="createRuntimeImage" />
+            <option value="assemble" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -200,7 +219,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ywGenshinWishTool [runDistributable]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ywGenshinWishTool [createDistributable]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -211,7 +230,49 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="runDistributable" />
+            <option value="createDistributable" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ywGenshinWishTool [init]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="init" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ywGenshinWishTool [wrapper]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="wrapper" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -242,68 +303,18 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ywGenshinWishTool:genshinTool-main [createDistributable]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/genshinTool-main" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="createDistributable" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="ywGenshinWishTool:genshinTool-main [createRuntimeImage]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/genshinTool-main" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="createRuntimeImage" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="ywGenshinWishTool:genshinTool-main [package]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/genshinTool-main" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="package" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="ywGenshinWishTool.genshinTool-main.jvmMain" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.elouyi.MainKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="ywGenshinWishTool.genshinTool-main.jsMain" />
@@ -354,11 +365,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ywGenshinWishTool:genshinTool-main [package]" />
-        <item itemvalue="Gradle.ywGenshinWishTool:genshinTool-main [createRuntimeImage]" />
-        <item itemvalue="Gradle.ywGenshinWishTool:genshinTool-main [createDistributable]" />
-        <item itemvalue="Gradle.ywGenshinWishTool [runDistributable]" />
-        <item itemvalue="Gradle.ywGenshinWishTool [createRuntimeImage]" />
+        <item itemvalue="Application.MainKt" />
+        <item itemvalue="Gradle.ywGenshinWishTool [assemble]" />
+        <item itemvalue="Gradle.ywGenshinWishTool [wrapper]" />
+        <item itemvalue="Gradle.ywGenshinWishTool [init]" />
+        <item itemvalue="Gradle.ywGenshinWishTool [createDistributable]" />
       </list>
     </recent_temporary>
   </component>
@@ -389,7 +400,8 @@
       <workItem from="1617961483034" duration="7378000" />
       <workItem from="1618020552592" duration="26234000" />
       <workItem from="1618048567089" duration="9966000" />
-      <workItem from="1618058998807" duration="11969000" />
+      <workItem from="1618058998807" duration="18090000" />
+      <workItem from="1618114830196" duration="8694000" />
     </task>
     <task id="LOCAL-00001" summary="init with gradle">
       <created>1617697772927</created>
@@ -510,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618068130639</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="windows distribution">
+      <created>1618071059531</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1618071059531</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,6 +566,7 @@
     <MESSAGE value="导出数据到 json 文件" />
     <MESSAGE value="compose ui" />
     <MESSAGE value="jvm show data" />
-    <option name="LAST_COMMIT_MESSAGE" value="jvm show data" />
+    <MESSAGE value="windows distribution" />
+    <option name="LAST_COMMIT_MESSAGE" value="windows distribution" />
   </component>
 </project>

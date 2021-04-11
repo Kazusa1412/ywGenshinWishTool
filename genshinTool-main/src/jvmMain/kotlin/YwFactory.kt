@@ -1,8 +1,6 @@
 package com.elouyi
 
-import com.elouyi.data.DataProducer
-import com.elouyi.data.IUrlDataFromMap
-import com.elouyi.data.WishResponse
+import com.elouyi.data.*
 
 actual object YwFactory {
 
@@ -19,6 +17,24 @@ actual object YwFactory {
     }
 
     actual fun urlDataFromMap(): IUrlDataFromMap {
-        TODO("Not yet implemented")
+        return object : IUrlDataFromMap {
+            override fun getUrlDataFromMap(map: Map<String, Any>): UrlData {
+                // TODO: 2021/4/11 用反射
+                return UrlData().apply {
+                    authkey_ver = map["authkey_ver"].toString().toInt()
+                    sign_type = map["sign_type"].toString().toInt()
+                    auth_appid = map["auth_appid"].toString()
+                    init_type = map["init_type"].toString().toInt()
+                    gacha_id = map["gacha_id"].toString()
+                    lang = map["lang"].toString()
+                    device_type = map["device_type"].toString()
+                    ext = map["ext"].toString()
+                    game_version = map["game_version"].toString()
+                    region = map["region"].toString()
+                    authkey = map["authkey"].toString()
+                    game_biz = map["game_biz"].toString()
+                }
+            }
+        }
     }
 }

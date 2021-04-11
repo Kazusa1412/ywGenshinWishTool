@@ -1,5 +1,6 @@
 package com.elouyi
 
+import androidx.compose.animation.Crossfade
 import androidx.compose.desktop.Window
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -14,21 +15,30 @@ import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.elouyi.data.WishJsonFile
-import com.elouyi.data.getWishData
+import com.elouyi.data.getWishDataFromJsonFile
+import com.elouyi.data.requestData
 import com.elouyi.data.statement
 import com.elouyi.ui.*
 import com.elouyi.utils.DataState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import java.io.File
+import javax.imageio.ImageIO
 
-fun main() = Window(title = "ywGenshinTool V0.1",size = IntSize(1280,720),icon = null) {
-
+fun main() = Window(
+    title = "ywGenshinTool V0.1",
+    size = IntSize(1280,720),
+    icon = ImageIO.read(YwFactory::class.java.classLoader.getResource("ct14.jpg"))
+) {
+    init()
     val data = remember { mutableStateOf(WishJsonFile()) }
     val state = remember { mutableStateOf(DataState.LOADING) }
 
     GlobalScope.launch(Dispatchers.Main) {
-        val jsonData = getWishData()
+        state.value = DataState.DOWNLOADING
+        //return@launch
+        val jsonData = getWishDataFromJsonFile()
         if (jsonData == null) {
             state.value = DataState.NONE
             return@launch
@@ -42,8 +52,20 @@ fun main() = Window(title = "ywGenshinTool V0.1",size = IntSize(1280,720),icon =
             Column(modifier = Modifier.weight(100f)) {
                 Row (modifier = Modifier.height(100.dp).fillMaxWidth().background(Color(250,140,160,150))) {
                     Button(
-                        modifier = Modifier.padding(10.dp),
+                        modifier = Modifier.padding(20.dp),
                         onClick = {
+                            if (state.value == DataState.LOADING || state.value == DataState.DOWNLOADING) return@Button
+                            GlobalScope.launch(Dispatchers.Main) {
+                                state.value = DataState.DOWNLOADING
+                                requestData()
+                                val jsonData = getWishDataFromJsonFile()
+                                if (jsonData == null) {
+                                    state.value = DataState.NONE
+                                    return@launch
+                                }
+                                data.value = jsonData
+                                state.value = DataState.DONE
+                            }
 
                         }
                     ) {
@@ -51,11 +73,14 @@ fun main() = Window(title = "ywGenshinTool V0.1",size = IntSize(1280,720),icon =
                     }
                 }
 
-                when(state.value) {
-                    DataState.LOADING -> loading()
-                    DataState.DONE -> showInfo(data.value)
-                    DataState.NONE -> none()
-                    DataState.ERROR -> showError()
+                Crossfade(targetState = state) {
+                    when(it.value) {
+                        DataState.LOADING -> loading()
+                        DataState.DONE -> showInfo(data.value)
+                        DataState.NONE -> none()
+                        DataState.ERROR -> showError()
+                        DataState.DOWNLOADING -> showDownloading()
+                    }
                 }
             }
 
@@ -92,4 +117,8 @@ fun main() = Window(title = "ywGenshinTool V0.1",size = IntSize(1280,720),icon =
     }
 
      */
+}
+
+fun init() {
+    File("data").apply { if (!exists()) mkdir() }
 }

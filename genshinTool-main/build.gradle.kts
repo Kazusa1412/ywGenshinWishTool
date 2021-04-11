@@ -3,7 +3,9 @@ import org.jetbrains.compose.compose
 import org.jetbrains.compose.desktop.application.dsl.*
 
 group = "com.elouyi"
-version = "1.0"
+version = "0.0.1"
+
+val distributionVersion = version.toString()
 
 plugins {
     kotlin("multiplatform") version Versions.kotlin
@@ -116,19 +118,20 @@ kotlin {
 compose.desktop {
     application {
         mainClass = "com.elouyi.MainKt"
-
         nativeDistributions {
             targetFormats(TargetFormat.Msi, TargetFormat.Exe)
 
             outputBaseDir.set(project.buildDir.resolve("customOutputDir"))
             windows {
                 // a version for all Windows distributables
+                println(project.file("icon.ico").path)
                 packageVersion = "0.0.1"
                 // a version only for the msi package
                 msiPackageVersion = "0.0.1"
                 // a version only for the exe package
                 exePackageVersion = "0.0.1"
                 vendor = "example vender"
+                iconFile.set(project.file("icon.ico"))
             }
 
         }

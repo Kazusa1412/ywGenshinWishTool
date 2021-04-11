@@ -5,7 +5,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
 
-suspend fun getWishData(): WishJsonFile? = withContext(Dispatchers.IO) {
+suspend fun getWishDataFromJsonFile(): WishJsonFile? = withContext(Dispatchers.IO) {
     val dir = File("data").apply {
         try {
             if (listFiles().isEmpty()) return@withContext null
@@ -18,4 +18,27 @@ suspend fun getWishData(): WishJsonFile? = withContext(Dispatchers.IO) {
     val str = String(bytes)
     inputStream.close()
     deserialize<WishJsonFile>(str)
+}
+
+suspend fun readLocalFile(): String = withContext(Dispatchers.IO) {
+    val userName = System.getProperty("user.name")
+    val filePath = "C:/Users/${userName}/AppData/LocalLow/miHoYo/原神/output_log.txt"
+    val file = File(filePath).apply { if (!exists()) return@withContext "" }
+    val inputString = file.inputStream()
+    val str = String(inputString.readBytes())
+    inputString.close()
+    val prefix = "OnGetWebViewPageFinish:https://"
+    var urlParam = ""
+    str.split("\n").forEach {
+        if (it.startsWith(prefix)) {
+            urlParam = it.slice(prefix.length - 8 until it.length)
+            return@forEach
+        }
+    }
+    urlParam
+}
+
+suspend fun requestData() {
+    val data = getUrlDataFromUrl(readLocalFile())
+    getWishData(data)
 }

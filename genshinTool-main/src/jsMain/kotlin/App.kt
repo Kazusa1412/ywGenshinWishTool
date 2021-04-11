@@ -1,6 +1,8 @@
 package com.elouyi
 
 import kotlinx.browser.document
+import kotlinx.css.border
+import kotlinx.css.width
 import kotlinx.html.InputType
 import kotlinx.html.id
 import kotlinx.html.js.onClickFunction
@@ -10,6 +12,7 @@ import react.*
 import react.dom.button
 import react.dom.input
 import react.dom.p
+import styled.css
 import styled.styledDiv
 import kotlin.reflect.typeOf
 
@@ -33,7 +36,6 @@ class App : RComponent<AppProps,AppState>() {
                 attrs {
                     type = InputType.file
                     id = "urlInput"
-                    accept = "json"
                 }
             }
             button {
@@ -63,7 +65,9 @@ class App : RComponent<AppProps,AppState>() {
         }
 
         styledDiv {
+            css {
 
+            }
         }
     }
 }

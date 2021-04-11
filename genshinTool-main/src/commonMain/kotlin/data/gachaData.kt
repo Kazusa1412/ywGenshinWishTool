@@ -61,6 +61,11 @@ data class WishJsonFile(
 )
 
 /**
+ * @property total 总次数
+ * @property ch_5 5星角色数量
+ * @property weapon_5 5星武器
+ * @property s_5 5星数据
+ * @property count5 多少发没出5星了
  * @see getWishShowData
  */
 data class WishShowData(
@@ -150,6 +155,7 @@ data class WishUrlBuilder(
  * 从读取到的 str 提取请求参数信息
  */
 fun getUrlDataFromUrl(url: String): UrlData {
+    println("url is $url")
     val i = url.indexOf("?")
     val map = mutableMapOf<String,Any>()
     url.slice(i + 1 until url.length)

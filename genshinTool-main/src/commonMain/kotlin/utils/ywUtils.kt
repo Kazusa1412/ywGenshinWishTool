@@ -21,4 +21,5 @@ enum class DataState {
     DONE,
     NONE,
     ERROR,
+    DOWNLOADING,
 }

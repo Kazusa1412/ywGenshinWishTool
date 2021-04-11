@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.system.module.type="sourceSet" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../../build/js/packages/ywGenshinWishTool-genshinTool-main/kotlin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../genshinTool-main/build/externals/ywGenshinWishTool-genshinTool-main/src" />
+    <content url="file://$MODULE_DIR$/../../../genshinTool-main/src/jsMain">
+      <sourceFolder url="file://$MODULE_DIR$/../../../genshinTool-main/src/jsMain/kotlin" type="kotlin-source" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../genshinTool-main/src/jsMain/resources" type="kotlin-resource" />
+    </content>
+    <orderEntry type="jdk" jdkName="Kotlin SDK" jdkType="KotlinSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="ywGenshinWishTool.genshinTool-main.commonMain" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-js:1.4.30" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../build/js/node_modules/react/index.js" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.4.30" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../build/js/node_modules/react-dom/index.js" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../build/js/node_modules/styled-components/dist/styled-components.cjs.js" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../build/js/node_modules/@babel/helper-module-imports/lib/index.js" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../build/js/node_modules/lodash/lodash.js" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../build/js/node_modules/supports-color/browser.js" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../build/js/node_modules/jsesc/jsesc.js" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../build/js/node_modules/source-map/source-map.js" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../build/js/node_modules/@emotion/is-prop-valid/dist/is-prop-valid.cjs.js" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../build/js/node_modules/@emotion/memoize/dist/memoize.cjs.js" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../build/js/node_modules/@emotion/stylis/dist/stylis.cjs.js" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../build/js/node_modules/@emotion/unitless/dist/unitless.cjs.js" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../build/js/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="Gradle: org.jetbrains:kotlin-styled:1.0.0-pre.113-kotlin-1.4.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains:kotlin-react-dom:16.13.1-pre.113-kotlin-1.4.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains:kotlin-react:16.13.1-pre.113-kotlin-1.4.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-js:1.4.32" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.4.32" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains:kotlin-extensions:1.0.1-pre.113-kotlin-1.4.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-html-js:0.7.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.ktor:ktor-client-core-js:1.5.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.4.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-serialization-json-js:1.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains:kotlin-css-js:1.0.0-pre.113-kotlin-1.4.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:atomicfu-js:0.15.1" level="project" />
+    <orderEntry type="library" name="Gradle: io.ktor:ktor-http-cio-js:1.5.3" level="project" />
+    <orderEntry type="library" name="Gradle: io.ktor:ktor-http-js:1.5.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-serialization-core-js:1.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: io.ktor:ktor-utils-js:1.5.3" level="project" />
+    <orderEntry type="library" name="Gradle: io.ktor:ktor-io-js:1.5.3" level="project" />
+  </component>
+</module>

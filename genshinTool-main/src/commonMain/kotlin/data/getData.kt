@@ -63,12 +63,8 @@ fun getWishShowData(res: List<WishResponse>): WishShowData {
                         s_5[it.name] = count5
                         count5 = 0
                     }
-                    "4" -> {
-                        if (it.item_type == "角色") ch_4++ else weapon_4++
-                    }
-                    "3" -> {
-                        weapon_3++
-                    }
+                    "4" -> if (it.item_type == "角色") ch_4++ else weapon_4++
+                    "3" -> weapon_3++
                 }
             }
         }

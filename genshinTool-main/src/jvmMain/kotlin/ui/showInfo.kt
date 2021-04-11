@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
@@ -31,8 +32,10 @@ fun showInfo(data: WishJsonFile) {
             "200" -> std = d
         }
     }
-    Row(modifier = Modifier.padding(20.dp).height(700.dp).fillMaxWidth().background(Color.Green)) {
-        Column {
+    Row(modifier = Modifier.padding(20.dp).height(700.dp).fillMaxWidth().background(Color.Green),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Center) {
+        Column{
             // 角色活动祈愿
             val showData = getWishShowData(ch)
             zz(showData)
@@ -62,19 +65,25 @@ fun zz(showData: WishShowData) {
     Canvas(modifier = Modifier.padding(70.dp).height(200.dp).width(200.dp).background(Color.Gray)) {
         drawInfoCircle(showData)
     }
-
-    Text("${showData.startTime} ~ ${showData.endTime}")
-    Text("一共 $total 抽，已累计 ${showData.count5} 抽未出5星")
-    Text("5⭐: $c5   ${String.format("%.2f",(c5 * 100f)/total)}%")
-    Text("4⭐: $c4   ${String.format("%.2f",(c4 * 100f)/total)}%")
-    Text("3⭐: $c3   ${String.format("%.2f",(c3 * 100f)/total)}%")
-    Text("5⭐ 记录: ")
-    val str5 = buildString {
-        showData.s_5.forEach{ (key, value) ->
-            append("$key[$value] ")
+    Row {
+        Spacer(modifier = Modifier.width(50.dp))
+        Column {
+            Text("${showData.startTime} ~ ${showData.endTime}")
+            Text("一共 $total 抽，已累计 ${showData.count5} 抽未出5星")
+            Text("5⭐: $c5   ${String.format("%.2f",(c5 * 100f)/total)}%")
+            Text("4⭐: $c4   ${String.format("%.2f",(c4 * 100f)/total)}%")
+            Text("3⭐: $c3   ${String.format("%.2f",(c3 * 100f)/total)}%")
+            Text("5⭐ 记录: ")
+            val str5 = buildString {
+                showData.s_5.forEach{ (key, value) ->
+                    append("$key[$value] ")
+                }
+            }
+            Text(str5,fontWeight = FontWeight.Light,fontSize = 10.sp)
         }
     }
-    Text(str5,fontWeight = FontWeight.Light,fontSize = 10.sp)
+
+
 }
 
 fun DrawScope.drawInfoCircle(showData: WishShowData) {
@@ -86,33 +95,34 @@ fun DrawScope.drawInfoCircle(showData: WishShowData) {
     val weapon3 = (showData.weapon_3 * 360f)/total
     println(ch5)
     println("we5 $weapon5")
+    val offset = 75
     drawArc(
         color = YwColor.gold,
-        startAngle = 0f,
+        startAngle = 0f - offset,
         sweepAngle = ch5,
         true
     )
     drawArc(
         color = YwColor.z,
-        startAngle = ch5,
+        startAngle = ch5 - offset,
         sweepAngle = weapon5,
         true
     )
     drawArc(
         color = YwColor.purple,
-        startAngle = ch5 + weapon5,
+        startAngle = ch5 + weapon5 - offset,
         sweepAngle = ch4,
         true
     )
     drawArc(
         color = YwColor.blue,
-        startAngle = ch5 + weapon5 + ch4,
+        startAngle = ch5 + weapon5 + ch4 - offset,
         sweepAngle = weapon4,
         true
     )
     drawArc(
         color = YwColor.pink,
-        startAngle = ch5 + weapon5 + ch4 + weapon4,
+        startAngle = ch5 + weapon5 + ch4 + weapon4 - offset,
         sweepAngle = weapon3,
         true
     )
