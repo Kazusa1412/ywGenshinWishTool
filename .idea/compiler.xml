@@ -2,6 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="15">
+      <module name="ywGenshinWishTool.genshinTool-main.androidLibMain" target="1.8" />
+      <module name="ywGenshinWishTool.genshinTool-main.androidLibTest" target="1.8" />
       <module name="ywGenshinWishTool.genshinTool-main.androidMain" target="1.8" />
       <module name="ywGenshinWishTool.genshinTool-main.androidTest" target="1.8" />
     </bytecodeTargetLevel>

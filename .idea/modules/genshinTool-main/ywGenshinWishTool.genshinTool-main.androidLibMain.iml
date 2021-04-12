@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.system.module.type="sourceSet" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$/../../../genshinTool-main/build/classes/kotlin/android/main" />
+    <output url="file://$MODULE_DIR$/../../../genshinTool-main/build/classes/kotlin/androidLib/main" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../../genshinTool-main/src/androidMain">
-      <sourceFolder url="file://$MODULE_DIR$/../../../genshinTool-main/src/androidMain/kotlin" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../genshinTool-main/src/androidMain/kotlin" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/../../../genshinTool-main/src/androidLibMain">
+      <sourceFolder url="file://$MODULE_DIR$/../../../genshinTool-main/src/androidLibMain/kotlin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../genshinTool-main/src/androidLibMain/kotlin" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ywGenshinWishTool.genshinTool-main.commonMain" />
-    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.32" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.30" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.4.32" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.30" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.32" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.4.30" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.4.30" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.4.32" level="project" />
     <orderEntry type="library" name="Gradle: io.ktor:ktor-client-core-jvm:1.5.3" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.4.3" level="project" />

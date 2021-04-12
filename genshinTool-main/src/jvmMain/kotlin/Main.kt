@@ -24,7 +24,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.io.File
-import java.lang.module.ModuleFinder.compose
 import javax.imageio.ImageIO
 
 fun main() {

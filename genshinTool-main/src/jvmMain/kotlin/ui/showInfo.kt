@@ -21,7 +21,6 @@ import com.elouyi.data.WishResponse
 import com.elouyi.data.WishShowData
 import com.elouyi.data.getWishShowData
 
-
 @Composable
 fun showInfo(data: WishJsonFile) {
 
@@ -39,6 +38,7 @@ fun showInfo(data: WishJsonFile) {
     Row {
         Divider(modifier = Modifier.weight(1f),color = Color(0,0,0,0))
         Column {
+            // TODO: 2021/4/12 换成 button
             Row {
                 Text("5⭐ 角色!",color = YwColor.ch5)
                 Rect(offset = Offset.Zero,size = Size(10f,10f))
@@ -93,7 +93,7 @@ fun zz(showData: WishShowData) {
             val textSize = 13.sp
             val lineH = 10.sp
             Text("${showData.startTime} ~ ${showData.endTime}",fontSize = textSize,lineHeight = lineH)
-            Text("一共 $total 抽，已累计 ${showData.count5} 抽未出5星",fontSize = textSize,lineHeight = lineH)
+            Text("一共 $total 抽，已累计 ${showData.count5} 抽未出5⭐",fontSize = textSize,lineHeight = lineH)
             Text("5⭐: $c5   ${String.format("%.2f",(c5 * 100f)/total)}%",fontSize = textSize,lineHeight = lineH)
             Text("4⭐: $c4   ${String.format("%.2f",(c4 * 100f)/total)}%",fontSize = textSize,lineHeight = lineH)
             Text("3⭐: $c3   ${String.format("%.2f",(c3 * 100f)/total)}%",fontSize = textSize,lineHeight = lineH)
@@ -127,6 +127,7 @@ fun DrawScope.drawInfoCircle(showData: WishShowData) {
     val weapon3 = (showData.weapon_3 * 360f)/total
     val offset = 75
 
+    // TODO: 2021/4/12 加动画
     drawArc(
         color = YwColor.ch5,
         startAngle = 0f - offset,

@@ -1,5 +1,5 @@
 import java.io.File
-import org.jetbrains.compose.compose
+//import org.jetbrains.compose.compose
 import org.jetbrains.compose.desktop.application.dsl.*
 
 group = "com.elouyi"
@@ -32,6 +32,9 @@ kotlin {
         }
 
     }
+
+    // 会导致 compose 插件找不到目标
+    //jvm("android")
 
     js(LEGACY) {
         browser {
@@ -112,6 +115,8 @@ kotlin {
         }
         val mingwX64Test by getting
 
+        //val androidMain by getting
+
         all {
             languageSettings.enableLanguageFeature("InlineClasses")
         }
@@ -120,10 +125,14 @@ kotlin {
 
 compose.desktop {
     application {
+
+        val target = project.kotlin.targets.getByName("jvm")
+        from(target)
+        println(this.name)
+        //from(sourceSets.getByName("jvm"))
         mainClass = "com.elouyi.MainKt"
         nativeDistributions {
             targetFormats(TargetFormat.Msi, TargetFormat.Exe)
-
             outputBaseDir.set(project.buildDir.resolve("customOutputDir"))
             windows {
                 // a version for all Windows distributables
