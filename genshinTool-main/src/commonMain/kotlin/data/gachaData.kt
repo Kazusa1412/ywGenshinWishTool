@@ -155,7 +155,6 @@ data class WishUrlBuilder(
  * 从读取到的 str 提取请求参数信息
  */
 fun getUrlDataFromUrl(url: String): UrlData {
-    println("url is $url")
     val i = url.indexOf("?")
     val map = mutableMapOf<String,Any>()
     url.slice(i + 1 until url.length)
@@ -171,7 +170,6 @@ fun getUrlDataFromUrl(url: String): UrlData {
                 map[get(0)] = get(1)
             }
         }
-    println(map)
     return YwFactory.urlDataFromMap().getUrlDataFromMap(map)
 }
 
