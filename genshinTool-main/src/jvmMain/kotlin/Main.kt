@@ -25,6 +25,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.io.File
 import javax.imageio.ImageIO
+import kotlin.properties.Delegates
 
 fun main() {
     try {

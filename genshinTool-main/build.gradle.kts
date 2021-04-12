@@ -103,6 +103,7 @@ kotlin {
                 implementation(npm("react",Versions.react))
                 implementation(npm("react-dom",Versions.react))
                 implementation(npm("styled-components", Versions.styledComponents))
+                implementation(npm("echarts","5.0.2"))
             }
         }
 
@@ -133,6 +134,8 @@ compose.desktop {
         mainClass = "com.elouyi.MainKt"
         nativeDistributions {
             targetFormats(TargetFormat.Msi, TargetFormat.Exe)
+
+            // 听说 @Suppress 可以抑制错误
             outputBaseDir.set(project.buildDir.resolve("customOutputDir"))
             windows {
                 // a version for all Windows distributables
