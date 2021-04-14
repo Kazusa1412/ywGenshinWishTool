@@ -33,8 +33,8 @@ jobs:
         run: ./gradlew.bat package
       - name: packageUberJar
         run: ./gradlew.bat packageUberJarForCurrentOS
-      - name: jsBrowerDistribution
-        run: ./gradlew.bat jsBrowerDistribution
+      - name: jsBrowserDistribution
+        run: ./gradlew.bat jsBrowserDistribution
       - name: linkReleaseExcutableMingwX64
         run: ./gradlew.bat linkReleaseExcutableMingwX64
       - uses: actions/upload-artifact@v2
