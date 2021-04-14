@@ -32,7 +32,7 @@ jobs:
       - name: packageComposeDistribution
         run: ./gradlew.bat package
       - name: packageUberJar
-        run: ./gradlew.bat packageUberJarForCurruntOS
+        run: ./gradlew.bat packageUberJarForCurrentOS
       - name: jsBrowerDistribution
         run: ./gradlew.bat jsBrowerDistribution
       - name: linkReleaseExcutableMingwX64
