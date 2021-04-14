@@ -37,7 +37,7 @@ jobs:
         run: ./gradlew.bat jsBrowerDistribution
       - name: linkReleaseExcutableMingwX64
         run: ./gradlew.bat linkReleaseExcutableMingwX64
-      - uses: action/upload-artifact@v2
+      - uses: actions/upload-artifact@v2
         with:
           name: build-artifact
           path:
