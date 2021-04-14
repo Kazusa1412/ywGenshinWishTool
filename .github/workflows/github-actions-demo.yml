@@ -42,10 +42,16 @@ jobs:
       - name: linkReleaseExecutableMingwX64
         run: ./gradlew.bat linkReleaseExecutableMingwX64
       - uses: actions/upload-artifact@v2
-        with:
-          name: build-artifact
-          path: 
-            ./genshinTool-main/build/customOutputDir/
-            ./genshinTool-main/build/compose/jars/
-            ./genshinTool-main/build/distributions/
-            ./genshinTool-main/build/bin/
+      - with:
+          name: windowsPackage
+          path: ./genshinTool-main/build/customOutputDir/
+
+      - with:
+          name: jar
+          path: ./genshinTool-main/build/compose/jars/
+      - with:
+          name: jsBrowser
+          path: ./genshinTool-main/build/distributions/
+      - with:
+          name: mingwX64
+          path: ./genshinTool-main/build/bin/
