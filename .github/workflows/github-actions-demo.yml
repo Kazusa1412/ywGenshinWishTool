@@ -40,4 +40,8 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: build-artifact
-          path: ./genshinTool-main/build/
+          path: 
+            ./genshinTool-main/build/customOutputDir/
+            ./genshinTool-main/build/compose/jars/
+            ./genshinTool-main/build/distributions/
+            ./genshinTool-main/build/bin/
