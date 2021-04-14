@@ -26,6 +26,8 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Build with Gradle
-      # - run: ./gradlew.bat build
-      - run: ./gradlew.bat createDistributable
-      - run: ./gradlew.bat package
+        run: ./gradlew.bat build
+      - name: createDistributable
+        run: ./gradlew.bat createDistributable
+      - name: packageComposeDistribution
+        run: ./gradlew.bat package
