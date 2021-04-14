@@ -16,3 +16,7 @@ gradle-app.setting
 /node_modules/*
 
 */data/*.json
+data/*.json
+
+.idea
+!.idea/icon.png
